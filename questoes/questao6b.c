@@ -1,42 +1,22 @@
-#include <stdio.h>
+#include<stdio.h>
 
-void inverterArrayRecursivo(int array[], int start, int end) {
-    if (start >= end) {
-        return;
-    }
-
-    int temp = array[start];
-    array[start] = array[end];
-    array[end] = temp;
-
-    inverterArrayRecursivo(array, start + 1, end - 1);
-}
-
-void inverterArray(int array[], int size) {
-    inverterArrayRecursivo(array, 0, size - 1);
-}
 
 int main() {
-    int size;
 
-    printf("Digite o tamanho do array: ");
-    scanf("%d", &size);
+    int valor;
+    printf("Digite quantos numeros vai colocar: ");
+    scanf("%d", &valor);
 
-    int array[size];
+    int vetor[valor];
 
-    printf("Digite os elementos do array:\n");
-    for (int i = 0; i < size; i++) {
-        scanf("%d", &array[i]);
+    for (int j = 0; j < valor; j++)
+    {
+        scanf("%d ", &vetor[j]);
     }
 
-    inverterArray(array, size);
-
-    printf("Array invertido:\n");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", array[i]);
+    for (int i = valor-1; i >= 0; i--)
+    {
+        printf("%d ", vetor[i]);
     }
-
-    printf("\n");
-
-    return 0;
+    
 }
